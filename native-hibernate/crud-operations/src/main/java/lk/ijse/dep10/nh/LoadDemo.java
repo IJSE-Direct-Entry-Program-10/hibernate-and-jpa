@@ -5,17 +5,16 @@ import lk.ijse.dep10.nh.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class GetDemo {
+public class LoadDemo {
 
     public static void main(String[] args) {
         try (SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
              Session session = sessionFactory.openSession()) {
-            Customer c2 = session.get(Customer.class, 2);
-            System.out.println("---------");
-            System.out.println(c2);
-            Customer c3 = session.find(Customer.class, 3);
-            System.out.println("---------");
-            System.out.println(c3);
+//            Customer c1 = session.load(Customer.class, 1);
+            Customer c1 = session.getReference(Customer.class, 2);
+            System.out.println("-------");
+//            System.out.println(c1);
+            System.out.println(c1.getName());
         }
     }
 }
