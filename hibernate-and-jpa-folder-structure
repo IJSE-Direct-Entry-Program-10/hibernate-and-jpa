@@ -1,0 +1,31 @@
+hibernate-and-jpa
+	|
+	---- jpa-hibernate
+	|	--- pom.xml
+	|	|
+	|	--- jpa-hibernate-bootstraping
+	|	|	|
+	|	|	---pom.xml
+	|	|
+	|	--- crud-operations
+	|	|	|
+	|	|	---pom.xml
+	|	|
+	|	--- relationships
+	|	|	|
+	|	|	--- pom.xml
+	|
+	---- native-hibernate
+	|	--- pom.xml
+	|	|
+	|	--- native-hibernate-bootstraping
+	|	|	|
+	|	|	--- pom.xml
+	|	|
+	|	--- crud-operations
+	|	|	|
+	|	|	--- pom.xml
+	|	|
+	|	--- relationships
+	|	|	|
+	|	|	--- pom.xml
