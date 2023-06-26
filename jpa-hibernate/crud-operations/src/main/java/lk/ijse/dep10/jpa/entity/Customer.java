@@ -1,13 +1,8 @@
 package lk.ijse.dep10.jpa.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.mysql.cj.xdevapi.JsonString;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
@@ -17,6 +12,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "customer")
 public class Customer {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String address;
