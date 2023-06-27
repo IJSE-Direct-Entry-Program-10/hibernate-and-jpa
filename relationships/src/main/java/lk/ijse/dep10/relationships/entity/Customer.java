@@ -20,7 +20,8 @@ public class Customer {
     private String name;
     @Column(name = "contact_number", nullable = false, unique = true)
     private String contactNumber;
-    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL)
     private List<Order> orderList = new ArrayList<>();
 
     public Customer(int id, String name, String contactNumber) {
@@ -32,5 +33,10 @@ public class Customer {
     public void addOrder(Order order){
         order.setCustomer(this);
         orderList.add(order);
+    }
+
+    public void setOrderList(List<Order> orderList){
+        orderList.forEach(order -> order.setCustomer(this));
+        this.orderList = orderList;
     }
 }
