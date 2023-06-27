@@ -11,7 +11,7 @@ hibernate-and-jpa
 	|	|	|
 	|	|	---pom.xml
 	|	|
-	|	--- relationships
+	|	--- quries
 	|	|	|
 	|	|	--- pom.xml
 	|
@@ -26,6 +26,6 @@ hibernate-and-jpa
 	|	|	|
 	|	|	--- pom.xml
 	|	|
-	|	--- relationships
+	|	--- quries
 	|	|	|
 	|	|	--- pom.xml
