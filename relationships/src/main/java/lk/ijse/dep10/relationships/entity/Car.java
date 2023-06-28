@@ -17,11 +17,16 @@ public class Car {
     @Column(name = "registration_number")
     private String registrationNumber;
     @Column(nullable = false)
-    private String mode;
+    private String model;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinTable(name = "car_manager",
     joinColumns = @JoinColumn(name = "car_reg_no", referencedColumnName = "registration_number"),
     inverseJoinColumns = @JoinColumn(name = "manager_id", referencedColumnName = "id", nullable = false))
     private Manager manager;
+
+    public Car(String registrationNumber, String model) {
+        this.registrationNumber = registrationNumber;
+        this.model = model;
+    }
 }
