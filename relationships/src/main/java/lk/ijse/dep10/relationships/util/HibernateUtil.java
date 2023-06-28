@@ -1,7 +1,7 @@
 package lk.ijse.dep10.relationships.util;
 
-import lk.ijse.dep10.relationships.entity.*;
 import lk.ijse.dep10.relationships.entity.Module;
+import lk.ijse.dep10.relationships.entity.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -13,7 +13,7 @@ public class HibernateUtil {
 
     private static final SessionFactory sessionFactory = buildSessionFactory();
 
-    private static SessionFactory buildSessionFactory(){
+    private static SessionFactory buildSessionFactory() {
         StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
                 .loadProperties("/application.properties")
                 .build();
@@ -23,6 +23,7 @@ public class HibernateUtil {
                 .addAnnotatedClasses(Employee.class, Spouse.class)
                 .addAnnotatedClasses(Student.class, Course.class)
                 .addAnnotatedClasses(Module.class, Teacher.class)
+                .addAnnotatedClasses(Manager.class, Car.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();
@@ -31,7 +32,7 @@ public class HibernateUtil {
                 .build();
     }
 
-    public static SessionFactory getSessionFactory(){
+    public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }
 }
