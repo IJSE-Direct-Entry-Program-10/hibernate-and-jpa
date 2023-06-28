@@ -19,7 +19,15 @@ public class Module {
     private String description;
     @Column(nullable = false)
     private int duration;
-    @ManyToOne
-    @JoinTable(name = "module_teacher", joinColumns = @JoinColumn(name = "module_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "teacher_id", referencedColumnName = "id", nullable = false))
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "module_teacher",
+            joinColumns = @JoinColumn(name = "module_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "teacher_id", referencedColumnName = "id", nullable = false))
     private Teacher teacher;
+
+    public Module(String id, String description, int duration) {
+        this.id = id;
+        this.description = description;
+        this.duration = duration;
+    }
 }
