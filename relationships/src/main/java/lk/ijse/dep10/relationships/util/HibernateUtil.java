@@ -1,6 +1,7 @@
 package lk.ijse.dep10.relationships.util;
 
 import lk.ijse.dep10.relationships.entity.*;
+import lk.ijse.dep10.relationships.entity.Module;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -21,6 +22,7 @@ public class HibernateUtil {
                 .addAnnotatedClasses(Customer.class, Order.class)
                 .addAnnotatedClasses(Employee.class, Spouse.class)
                 .addAnnotatedClasses(Student.class, Course.class)
+                .addAnnotatedClasses(Module.class, Teacher.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();
