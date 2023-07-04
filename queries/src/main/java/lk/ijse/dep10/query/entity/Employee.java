@@ -1,9 +1,6 @@
-package lk.ijse.dep10.query.util.entity;
+package lk.ijse.dep10.query.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "employee")
+@NamedNativeQuery(name = "searchEmployees",
+        query = "SELECT * FROM employee WHERE name LIKE :q",
+        resultClass = Employee.class)
 public class Employee {
     @Id
     private String id;

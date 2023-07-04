@@ -1,4 +1,4 @@
-package lk.ijse.dep10.query.util.entity;
+package lk.ijse.dep10.query.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

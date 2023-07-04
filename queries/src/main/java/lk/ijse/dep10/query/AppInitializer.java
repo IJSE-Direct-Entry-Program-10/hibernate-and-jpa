@@ -1,9 +1,9 @@
 package lk.ijse.dep10.query;
 
 import lk.ijse.dep10.query.util.HibernateUtil;
-import lk.ijse.dep10.query.util.entity.Car;
-import lk.ijse.dep10.query.util.entity.Employee;
-import lk.ijse.dep10.query.util.entity.EmployeeCar;
+import lk.ijse.dep10.query.entity.Car;
+import lk.ijse.dep10.query.entity.Employee;
+import lk.ijse.dep10.query.entity.EmployeeCar;
 
 import java.sql.Date;
 import java.time.LocalDate;
